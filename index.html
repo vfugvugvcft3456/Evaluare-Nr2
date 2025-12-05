@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Raport Evaluare Nr.2</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f4; }
+    h1, h2, h3 { color: #333; }
+    pre { background-color: #eee; padding: 10px; border-radius: 5px; overflow-x: auto; }
+    img { max-width: 100%; border: 1px solid #ccc; margin: 10px 0 30px; }
+    section { margin-bottom: 40px; }
+  </style>
+</head>
+<body>
+
+<h1>Raport Evaluare Nr.2</h1>
+<p><strong>Nume:</strong> vfugvugvcft3456<br>
+<strong>Email:</strong> loghin.daniel@elev.cihcahul.md<br>
+<strong>Durata:</strong> 50 minute</p>
+
+<section>
+  <h2>1. Configurare Git și clonare repository</h2>
+  <pre><code>git config --global user.name "vfugvugvcft3456"
+git config --global user.email "loghin.daniel@elev.cihcahul.md"
+git clone https://github.com/vfugvugvcft3456/Evaluare-Nr2.git</code></pre>
+  <img src="img/1.png" alt="Configurare Git și clonare repository">
+</section>
+
+<section>
+  <h2>2. Creare și commit fișier settings.xml</h2>
+  <pre><code>echo "&lt;settings&gt;initial&lt;/settings&gt;" > settings.xml
+git add settings.xml
+git commit -m "Commit file settings.xml"</code></pre>
+  <img src="img/2.png" alt="Commit settings.xml">
+</section>
+
+<section>
+  <h2>3. Redenumire fișier și amendare commit</h2>
+  <pre><code>git mv settings.xml configuration.xml
+git commit -m "Commit configuration.xml"
+git commit --amend -m "Commit file configuration.xml"</code></pre>
+  <img src="img/3.png" alt="Redenumire și amendare commit">
+</section>
+
+<section>
+  <h2>4. Push forțat către remote</h2>
+  <pre><code>git push origin main --force</code></pre>
+  <img src="img/4.png" alt="Push forțat către remote">
+</section>
+
+<section>
+  <h2>5. Creare și commit fișier page1.html</h2>
+  <pre><code>echo "&lt;html&gt;&lt;body&gt;Page1&lt;/body&gt;&lt;/html&gt;" > page1.html
+git add page1.html
+git commit -m "Add page1.html"
+git push origin main</code></pre>
+  <img src="img/5.png" alt="Commit page1.html">
+</section>
+
+<section>
+  <h2>6. Creare branch stage și fișier hosts.xml</h2>
+  <pre><code>git checkout -b stage main
+git push -u origin stage
+echo "&lt;hosts&gt;localhost&lt;/hosts&gt;" > hosts.xml
+git add hosts.xml
+git commit -m "Commit file hosts.xml"
+git push origin stage
+git switch main
+git merge stage
+git push origin main</code></pre>
+  <img src="img/6.png" alt="Branch stage și hosts.xml">
+</section>
+
+<section>
+  <h2>7. Branch dev → develop și sincronizare</h2>
+  <pre><code>git switch stage
+git checkout -b dev
+echo "ENV=production" > env.txt
+git add env.txt
+git commit -m "Commit file env.txt"
+git push -u origin dev
+git switch stage
+git merge dev
+git push origin stage
+git switch dev
+git branch -m develop
+git push origin :dev
+git push -u origin develop</code></pre>
+  <img src="img/7.png" alt="Branch dev → develop și sincronizare">
+</section>
+<section>
+    <h2>Linkuri utile</h2>
+    <ul>
+      <li><strong>Repository GitHub:</strong> <a href="https://github.com/vfugvugvcft3456/Evaluare-Nr2" target="_blank">Evaluare-Nr2</a></li>
+    </ul>
+  </section>
+</body>
+</html>
